@@ -50,6 +50,21 @@ public class DeviceUtils {
     private static final int DEVICE_PHONE  = 0;
     private static final int DEVICE_HYBRID = 1;
     private static final int DEVICE_TABLET = 2;
+	
+	/**
+     * Returns whether the device is voice-capable (meaning, it is also a phone).
+     */
+    public static boolean isVoiceCapable(Context context) {
+        TelephonyManager telephony =
+                (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        return telephony != null && telephony.isVoiceCapable();
+    }
+	
+	public static boolean isWifiOnly(Context context) {
+        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        return (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false);
+    }
 
     public static boolean deviceSupportsRemoteDisplay(Context ctx) {
         DisplayManager dm = (DisplayManager) ctx.getSystemService(Context.DISPLAY_SERVICE);
@@ -116,6 +131,13 @@ public class DeviceUtils {
             // Ignore
         }
         return false;
+    }
+	
+	/* returns whether the device has volume rocker or not. */
+    public static boolean hasVolumeRocker(Context context) {
+        final int deviceKeys = context.getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        return (deviceKeys & ButtonSettings.KEY_MASK_VOLUME) != 0;
     }
 
     private static int getScreenType(Context con) {
