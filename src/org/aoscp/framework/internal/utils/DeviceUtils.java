@@ -132,13 +132,6 @@ public class DeviceUtils {
         }
         return false;
     }
-	
-	/* returns whether the device has volume rocker or not. */
-    public static boolean hasVolumeRocker(Context context) {
-        final int deviceKeys = context.getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-        return (deviceKeys & ButtonSettings.KEY_MASK_VOLUME) != 0;
-    }
 
     private static int getScreenType(Context con) {
         WindowManager wm = (WindowManager)con.getSystemService(Context.WINDOW_SERVICE);

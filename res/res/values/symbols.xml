@@ -15,6 +15,6 @@
 <resources>
 
     <!-- Core -->
-    <string name="luna_core">Luna system</string>
-	
+    <java-symbol type="string" name="luna_core" />
+
 </resources>

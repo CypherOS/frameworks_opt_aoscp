@@ -23,20 +23,17 @@ LOCAL_SRC_FILES := $(call all-java-files-under,src)
 LOCAL_SRC_FILES += $(call all-Iaidl-files-under,src)
 
 LOCAL_JAVA_LIBRARIES := \
-    android-support-v7-preference \
-    android-support-v7-recyclerview \
+    android-support-v4 \
     android-support-annotations
 
 aoscp_platform_res := APPS/org.aoscp.framework-res_intermediates/src
 
 LOCAL_INTERMEDIATE_SOURCES := \
     $(aoscp_platform_res)/aoscp/R.java \
-    $(aoscp_platform_res)/org/aoscp/framework/internal/R.java \
-    $(aoscp_platform_res)/aoscp/Manifest.java
+    $(aoscp_platform_res)/org/aoscp/framework/internal/R.java
 
 include $(BUILD_JAVA_LIBRARY)
 aoscp_framework_module := $(LOCAL_INSTALLED_MODULE)
-
 # Make sure that R.java and Manifest.java are built before we build
 # the source for this library.
 aoscp_framework_res_R_stamp := \
