@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016-2017 SlimRoms Project
+<!-- Copyright (C) 2017 CypherOS
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -11,9 +12,18 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="aoscp"
+          package="aoscp.framework"
           coreApp="true" android:sharedUserId="android.uid.system"
+		  android:versionCode="25"
+          android:versionName="1.03"
 		  android:sharedUserLabel="@string/luna_core">
+		  
+	<!-- Allows an application access to the Luna hardware abstraction framework
+        <p>Not for use by third-party applications. -->
+    <permission android:name="aoscp.permission.HARDWARE_ABSTRACTION_ACCESS"
+                android:label="@string/permlab_useHardwareFramework"
+                android:description="@string/permdesc_useHardwareFramework"
+                android:protectionLevel="signature|privileged" />
 
     <application android:process="system"
                  android:persistent="true"

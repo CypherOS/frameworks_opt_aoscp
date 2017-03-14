@@ -23,6 +23,7 @@ LOCAL_PROGUARD_ENABLED:= disabled
 
 LOCAL_JAVA_LIBRARIES := \
     org.aoscp.framework \
+	org.aoscp.hardware \
     services
 
 include $(BUILD_JAVA_LIBRARY)

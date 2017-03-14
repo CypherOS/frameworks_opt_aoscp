@@ -12,13 +12,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Core -->
-    <string name="luna_core">AOSCP Services Framework</string>
+    <string name="config_externalSystemServer">org.aoscp.service.LunaSystemServer</string>
 	
-	<!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-    <string name="permlab_useHardwareFramework">use hardware framework</string>
-    <string name="permdesc_useHardwareFramework">Allows an app access to the Luna hardware framework.</string>
-	
+	<string-array name="config_externalAoscpServices">
+        <item>org.aoscp.service.LunaHardwareService</item>
+    </string-array>
+
 </resources>

@@ -16,5 +16,7 @@
 
     <!-- Core -->
     <java-symbol type="string" name="luna_core" />
+	<java-symbol type="string" name="config_externalSystemServer" />
+	<java-symbol type="array" name="config_externalAoscpServices" />
 
 </resources>
