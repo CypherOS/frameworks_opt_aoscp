@@ -15,7 +15,7 @@
 PRODUCT_PACKAGES += \
     org.aoscp.framework \
     org.aoscp.framework-res \
-	aoscp.services
+	services.aoscp
 
 PRODUCT_BOOT_JARS += \
     org.aoscp.framework
