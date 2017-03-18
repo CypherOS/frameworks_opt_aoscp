@@ -127,7 +127,7 @@ public class LunaHardwareService extends LunaSystemService {
             Intent intent = new Intent(aoscp.content.Intent.ACTION_INITIALIZE_LUNA_HARDWARE);
             intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
             mContext.sendBroadcastAsUser(intent, UserHandle.ALL,
-                    aoscp.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS);
+                    aoscp.framework.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS);
         }
     }
 	
@@ -145,14 +145,14 @@ public class LunaHardwareService extends LunaSystemService {
         @Override
         public int getSupportedFeatures() {
             mContext.enforceCallingOrSelfPermission(
-                    aoscp.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    aoscp.framework.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             return mLunaHwImpl.getSupportedFeatures();
         }
 
         @Override
         public boolean get(int feature) {
             mContext.enforceCallingOrSelfPermission(
-                    aoscp.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    aoscp.framework.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (!isSupported(feature)) {
                 Log.e(TAG, "feature " + feature + " is not supported");
                 return false;
@@ -163,7 +163,7 @@ public class LunaHardwareService extends LunaSystemService {
         @Override
         public boolean set(int feature, boolean enable) {
             mContext.enforceCallingOrSelfPermission(
-                    aoscp.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    aoscp.framework.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (!isSupported(feature)) {
                 Log.e(TAG, "feature " + feature + " is not supported");
                 return false;

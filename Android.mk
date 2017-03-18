@@ -29,9 +29,9 @@ LOCAL_JAVA_LIBRARIES := \
 aoscp_platform_res := APPS/org.aoscp.framework-res_intermediates/src
 
 LOCAL_INTERMEDIATE_SOURCES := \
-    $(aoscp_platform_res)/aoscp/R.java \
-    $(aoscp_platform_res)/org/aoscp/framework/internal/R.java \
-	$(aoscp_platform_res)/aoscp/Manifest.java
+    $(aoscp_platform_res)/aoscp/framework/R.java \
+    $(aoscp_platform_res)/aoscp/framework/Manifest.java \
+    $(aoscp_platform_res)/org/aoscp/framework/internal/R.java
 
 include $(BUILD_JAVA_LIBRARY)
 aoscp_framework_module := $(LOCAL_INSTALLED_MODULE)
